@@ -99,11 +99,11 @@ namespace SimpleText.data
                 }
 
             }
-            _metriks.Add("Количество предложений со знаком восклицания", exclamSentens);
-            _metriks.Add("процент слов у которых количество букв парное", Math.Round(100.0 * evenWords / words, 2));
-            _metriks.Add("Количество уникальных слов", uniqueWords.Count);
+            _metriks.Add("Количество предложений со знаком восклицания, шт", exclamSentens);
+            _metriks.Add("процент слов у которых количество букв парное, %", Math.Round(100.0 * evenWords / words, 2));
+            _metriks.Add("Количество уникальных слов, шт", uniqueWords.Count);
             _metriks.Add("Классическая тошнота документа", Math.Round(Math.Sqrt(uniqueWords.Values.Max()), 2));
-            _metriks.Add("Сложность текста (процент знаков препинания)", Math.Round(100.0 * marks / charackters,2));
+            _metriks.Add("Сложность текста (процент знаков препинания), %", Math.Round(100.0 * marks / charackters,2));
         }
 
 

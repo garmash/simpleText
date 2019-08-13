@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+ using SimpleText.data;
 
 namespace SimpleText.Controllers
 {
@@ -14,9 +15,11 @@ namespace SimpleText.Controllers
         public TextController(IGetText iGetText) {
             _allText = iGetText;
         }
- 
-        public ViewResult VText()
+        
+        [HttpPost]
+        public ViewResult VText(string formText)
         {
+            GetText.PText = formText;
             var text = _allText.AllTextString;
             return View(text);
         }
