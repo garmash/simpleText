@@ -16,13 +16,15 @@
     <h2>Text for analyze</h2>
 
     <div>
-        <textarea>@Model.TextToAnalyze</textarea>
+        <textarea rows="10" cols="100">@Model.TextToAnalyze</textarea>
     </div>
+    <br />
     <div>
-        <table>
+        <table border="1" width="723px">
+            <caption>Metrics</caption>
             <tr>
-                <th>Метрика</th>
-                <th>Значение</th>
+                <th width="80%">Metrics</th>
+                <th width="20%">Value</th>
             </tr>
             @{
                 foreach (var line1 in Model.Metriks)

@@ -14,11 +14,12 @@ namespace SimpleText.Controllers
         public TextController(IGetText iGetText) {
             _allText = iGetText;
         }
-
+ 
         public ViewResult VText()
         {
             var text = _allText.AllTextString;
             return View(text);
         }
-    }
+
+   }
 }

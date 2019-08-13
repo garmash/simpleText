@@ -11,26 +11,33 @@ namespace SimpleText.data
 {
     public class GetText : IGetText
     {
-        public string PText
+        static string pText = "";
+        public static string PText
         {
             get
             {
-                var sb = new System.Text.StringBuilder("7 Гай, гай! ой, дей же його кату!\r\n");
-                sb.Append("Еол насупившись сказав. —\r\n");
-                sb.Append("Я все б зробив за сюю плату,\r\n");
-                sb.Append("Та вітри всі порозпускав:\r\n");
-                sb.Append("Борей недуж лежить з похмілля,\r\n");
-                sb.Append("А Нот поїхав на весілля,\r\n");
-                sb.Append("Зефір же, давній негодяй,\r\n");
-                sb.Append("З дівчатами заженихався,\r\n");
-                sb.Append("А Евр в поденщики нанявся, —\r\n");
-                sb.Append("Я к хочеш, так і помишляй!\r\n");
-                return sb.ToString();
+                if (pText == "")
+                {
+
+                    var sb = new System.Text.StringBuilder("7 Гай, гай! ой, дей же його кату!\r\n");
+                    sb.Append("Еол насупившись сказав. —\r\n");
+                    sb.Append("Я все б зробив за сюю плату,\r\n");
+                    sb.Append("Та вітри всі порозпускав:\r\n");
+                    sb.Append("Борей недуж лежить з похмілля,\r\n");
+                    sb.Append("А Нот поїхав на весілля,\r\n");
+                    sb.Append("Зефір же, давній негодяй,\r\n");
+                    sb.Append("З дівчатами заженихався,\r\n");
+                    sb.Append("А Евр в поденщики нанявся, —\r\n");
+                    sb.Append("Я к хочеш, так і помишляй!\r\n");
+                    return sb.ToString();
+                }
+                else
+                {
+                    return pText;
+                }
             }
 
-            set {
-                
-            }
+            set { pText = value; }
         }
         public Dictionary<string, double> _metriks = new Dictionary<string, double>(); 
         //_metriks = 
@@ -92,11 +99,11 @@ namespace SimpleText.data
                 }
 
             }
-            _metriks.TryAdd("ExclamationSentenceCount", exclamSentens);
-            _metriks.TryAdd("EvenWordPercent", 100.0 * evenWords / words);
-            _metriks.TryAdd("UniqueWordCount", uniqueWords.Count);
-            _metriks.TryAdd("ClassicDocumentNausea", Math.Sqrt(uniqueWords.Values.Max()));
-            _metriks.TryAdd("ComplexDocumentPercent", 100.0 * marks / charackters);
+            _metriks.Add("Количество предложений со знаком восклицания", exclamSentens);
+            _metriks.Add("процент слов у которых количество букв парное", Math.Round(100.0 * evenWords / words, 2));
+            _metriks.Add("Количество уникальных слов", uniqueWords.Count);
+            _metriks.Add("Классическая тошнота документа", Math.Round(Math.Sqrt(uniqueWords.Values.Max()), 2));
+            _metriks.Add("Сложность текста (процент знаков препинания)", Math.Round(100.0 * marks / charackters,2));
         }
 
 

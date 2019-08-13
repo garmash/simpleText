@@ -1,4 +1,5 @@
 ﻿@using SimpleText.Models
+@using SimpleText.data
 @model SText
 
 @{
@@ -8,11 +9,11 @@
 
     <form method="post" action="/Text/Vtext">
         <h2>Sample text to analyze</h2>
-
-        @Html.TextAreaFor(model => model.TextToAnalyze, new { @class = "form-control", @rows = 24 })
-        <br />
-
-        <textarea id="job_text_seo" name="job_text" class="bg" rows="8" cols="50" style="overflow: auto; height: 306px;"></textarea>
+        <p>
+            <label>Update text for new analyze</label>
+            <br />
+            <textarea id="formText" name="formText" rows="10" cols="100">@GetText.PText</textarea>
+        </p>
         <br />
         <button type="submit">Analyze</button>
 

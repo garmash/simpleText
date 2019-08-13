@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SimpleText.Models;
+// using SimpleText.data;
 
 namespace myFirstAzureWebApp.Controllers
 {
@@ -22,5 +23,14 @@ namespace myFirstAzureWebApp.Controllers
         {
             return View();
         }
+        /*
+        [HttpPost]
+        public IActionResult FormText(string formText)
+        {
+            string authData = $"Text: {formText}";
+            GetText.PText = formText;
+            return Content(authData);
+        }
+        */
     }
 }
