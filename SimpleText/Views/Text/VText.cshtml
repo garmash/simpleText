@@ -1,0 +1,40 @@
+﻿@using SimpleText.Models
+@model SText
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VText</title>
+</head>
+<body>
+    <h2>Text for analyze</h2>
+
+    <div>
+        <textarea>@Model.TextToAnalyze</textarea>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Метрика</th>
+                <th>Значение</th>
+            </tr>
+            @{
+                foreach (var line1 in Model.Metriks)
+                {
+                    <tr>
+                        <td>@line1.Key</td>
+                        <td>@line1.Value</td>
+                    </tr>
+
+                }
+            }
+        </table>
+    </div>
+</body>
+</html>

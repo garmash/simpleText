@@ -1,0 +1,19 @@
+﻿@using SimpleText.Models
+@model SText
+
+@{
+    ViewData["Title"] = "This is Task Page";
+}
+
+
+    <form method="post" action="/Text/Vtext">
+        <h2>Sample text to analyze</h2>
+
+        @Html.TextAreaFor(model => model.TextToAnalyze, new { @class = "form-control", @rows = 24 })
+        <br />
+
+        <textarea id="job_text_seo" name="job_text" class="bg" rows="8" cols="50" style="overflow: auto; height: 306px;"></textarea>
+        <br />
+        <button type="submit">Analyze</button>
+
+    </form>
